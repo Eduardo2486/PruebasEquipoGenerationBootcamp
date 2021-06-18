@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form">
+    <input type="text" id="humidity" placeholder="Humedad">
+    <input type="text" id="envirioment" placeholder="Ambiente">
+    <input type="text" id="workers" placeholder="Trabajadores">
+    <input type="text" id="water" placeholder="Agua">
+    <button id="check">Revisar</button>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <input type="text" id="kilograms" placeholder="Peso en kilogramos">
+  <input type="text" id="estatura" placeholder="Estatura">
+  <button id="imc">Revisar</button>
+  Tu masa corporal es: <strong id="imcstrong"></strong>
+
+  <script>
+
+    document.getElementById('imc').addEventListener('click', ()=>{
+      let kilogramos = parseFloat(document.getElementById('kilograms').value);
+      let estatura = parseFloat(document.getElementById('estatura').value);
+      let imc = (kilogramos / Math.pow(estatura, 2)) ;
+      document.getElementById('imcstrong').innerText = imc.toFixed(2);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function checkSystem(humidity, envirioment, workers, water){
+      if(envirioment > 30){
+        console.log("Alarma ambiente")
+      }else if(envirioment < 90){
+        console.log("Alarma ambiente")
+      }
+      if(humidity > 50){
+        console.log("Alarma humedad")
+      }
+      if(workers > 100){
+        console.log("Alarma trabajdores")
+      }
+      if(water > 90){
+        console.log("Alarma agua")
+      }
+    }
+
+    let humidity = document.getElementById("humidity").value;
+    let envirioment = document.getElementById("envirioment").value;
+    let workers = document.getElementById("workers").value;
+    let water = document.getElementById("water").value;
+
+    document.getElementById('check').addEventListener('click', () => {
+      // console.log("Click")
+      // checkSystem(humidity, envirioment, workers, water)
+    })
+
+    document.getElementById('form').addEventListener('click', (event) => {
+      event.preventDefault();
+    })
+
+  </script>
+</body>
+</html>
